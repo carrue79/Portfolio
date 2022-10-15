@@ -1,19 +1,22 @@
 @import url(https://fonts.google.com/specimen/Press+Start+2P?query=Press+start+2p#styles);
-
+@media only screen and (max-width: 400px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        grid-template-rows: repeat(1, 200px);
+    }
+}
 body {
     font-family: 'Press start 2p';
     margin: 0;
     color: #5b5b5b;
     background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
-    /* letter-spacing: -7px; */
 }
-
 .container {
     max-width: 1024px;
     margin: 0 auto;
     padding: 0 15px;
 }
-
 .header {
     display: flex;
     align-items: stretch;
@@ -51,6 +54,7 @@ body {
     }
 }
 
+
 .biography {
     font-size: 30px;
     font-weight: bold;
@@ -71,83 +75,8 @@ body {
     color: #000;
     font-size: 40px;
     padding-bottom: 10px;
-
 }
 
-div title {
-    animation: glitch 1s linear infinite;
-}
-
-@keyframes glitch {
-
-    2%,
-    64% {
-        transform: translate(2px, 0) skew(0deg);
-    }
-
-    4%,
-    60% {
-        transform: translate(-2px, 0) skew(0deg);
-    }
-
-    62% {
-        transform: translate(0, 0) skew(5deg);
-    }
-}
-
-div:before,
-div:after {
-    content: attr(title);
-    position: absolute;
-    left: 41.35%;
-    top: -0, 5%;
-}
-
-div:before {
-    animation: glitchTop 1s linear infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop {
-
-    2%,
-    64% {
-        transform: translate(2px, -2px);
-    }
-
-    4%,
-    60% {
-        transform: translate(-2px, 2px);
-    }
-
-    62% {
-        transform: translate(13px, -1px) skew(-13deg);
-    }
-}
-
-div:after {
-    animation: glitchBotom 1.5s linear infinite;
-    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom {
-
-    2%,
-    64% {
-        transform: translate(-2px, 0);
-    }
-
-    4%,
-    60% {
-        transform: translate(-2px, 0);
-    }
-
-    62% {
-        transform: translate(-22px, 5px) skew(21deg);
-    }
-}
 
 
 
